@@ -14,12 +14,14 @@ def calculateScore(sentence):
   readLine = sentence.split();
   pos_score =0.0;
   neg_score =0.0;
-  for z in readLine:
-    if(lex.has_key(z.lower())):
-      if(lex[z.lower()] > 0.0):
-        pos_score = pos_score + float(lex[z.lower()]);
-      elif(lex[z] < 0.0):
-	neg_score = neg_score + float(lex[z.lower()]);
+  for z in range(0,len(readLine),1):
+    token = readline[z].lower();
+    if(lex.has_key(token)):
+      checkForNegation(sentence,z)
+      if(lex[token] > 0.0):
+        pos_score = pos_score + float(lex[token]);
+      elif(lex[token] < 0.0):
+	neg_score = neg_score + float(lex[token]);
   return (pos_score - neg_score); 
 
 '''def checkForNegation(sentence,index):
@@ -27,19 +29,18 @@ def calculateScore(sentence):
   negativeWordsList = {'not':1,'no':1,'never':1,'n\'t':1}
   readLine = sentence.split();
   try:
-     for i in range(index-window,index+window+1,1) 
-	  if(i!=index)
-	    if(negativeWordList.has_key(readLine[i].lower()))
+     for i in range(index-window,index+window+1,1): 
+	  if(i!=index):
+	    if(negativeWordList.has_key(readLine[i].lower())):
               return 1; 		
   except:
 	continue;
   return 0;
 '''
  
-def main():
-  sentence = "Hello Welcome to Brazil, time to set the stage";
+def ruleScorer(sentence):;
   score = calculateScore(sentence); 
-  print score;
+  return score;
   
 if __name__ == "__main__":
   main();
