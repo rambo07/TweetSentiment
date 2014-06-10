@@ -15,7 +15,7 @@ def calculateScore(sentence):
   pos_score =0.0;
   neg_score =0.0;
   for z in range(0,len(readLine),1):
-    token = readline[z].lower();
+    token = readLine[z].lower();
     if(lex.has_key(token)):
 #      checkForNegation(sentence,z)
       if(lex[token] > 0.0):
