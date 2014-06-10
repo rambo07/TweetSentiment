@@ -17,7 +17,7 @@ def calculateScore(sentence):
   for z in range(0,len(readLine),1):
     token = readline[z].lower();
     if(lex.has_key(token)):
-      checkForNegation(sentence,z)
+#      checkForNegation(sentence,z)
       if(lex[token] > 0.0):
         pos_score = pos_score + float(lex[token]);
       elif(lex[token] < 0.0):
@@ -38,7 +38,7 @@ def calculateScore(sentence):
   return 0;
 '''
  
-def ruleScorer(sentence):;
+def ruleScorer(sentence):
   score = calculateScore(sentence); 
   return score;
   
