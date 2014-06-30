@@ -57,7 +57,7 @@ def calculateScore(sentence):
         lexical_score = ((pos_score-neg_score)/lex_match)/4.0
 
     ans=emoticon_score+lexical_score;	
-    if(elex_match!=0 and lex_match!=0)	
+    if(elex_match!=0 and lex_match!=0):	
 	ans = ans/2.0
     return ans;	
 
