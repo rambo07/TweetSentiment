@@ -74,7 +74,8 @@ def checkForNegation(sentence,index):
       if(negativeWordsList.has_key(readLine[i].lower())):
         return 1; 	
   except:
-    return 0;
+    pass;
+  return 0;
 
  
 def ruleScorer(sentence):
