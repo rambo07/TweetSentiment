@@ -20,7 +20,7 @@ import ruleBased
 # The routes for the sentiment analyzer
 @app.route('/sentiment/<lang>', methods=['GET'])
 @cross_origin(methods=['GET'], send_wildcard=True, always_send=True)
-def convert_morphology(lang):
+def get_sentiment(lang):
     if lang == 'en':
         # get params from the request
         tweet = request.args['tweet']
