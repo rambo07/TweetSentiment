@@ -50,7 +50,7 @@ def calculateScore(sentence):
 						pos_score = pos_score - float(lex[tok])
 
 			#scoring emoticons in the sentence
-			if elex.has_key(tok):
+			elif elex.has_key(tok):
 				elex_match += 1
 				if elex[tok] > 0.0:
 					epos_score = epos_score + float(elex[tok])
