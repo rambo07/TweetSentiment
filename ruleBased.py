@@ -2,9 +2,12 @@
 import os;
 import sys;
 
+__location__ = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
+# f = open(os.path.join(__location__, 'bundled-resource.jpg'));
 #Loading the Sentiment Lexicon in the dictionary
 lex={};
-f1=open("merge.csv").readlines();
+f1=open(os.path.join(__location__, "merge.csv")).readlines();
 for i in f1:
   temp = i.split(",");	
   temp[1] = temp[1].strip("\n");
@@ -12,7 +15,7 @@ for i in f1:
 
 #Loading the Emoticons Lexicon in the dictionary
 elex={};
-f2=open("emoticon.csv").readlines();
+f2=open(os.path.join(__location__, "emoticon.csv")).readlines();
 for i in f2:
   temp = i.split(",");	
   temp[1] = temp[1].strip("\n");
